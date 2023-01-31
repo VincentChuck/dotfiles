@@ -16,6 +16,12 @@ if not typescript_setup then
   return
 end
 
+-- import tailwindcss-colors plugin safely
+local twc_setup, twc = pcall(require, "tailwindcss-colors")
+if not twc_setup then
+  return
+end
+
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -42,6 +48,10 @@ local on_attach = function(client, bufnr)
     keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
     keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
     keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
+  end
+
+  if client.name == "tailwindcss" then
+    require("tailwindcss-colors").buf_attach(bufnr)
   end
 end
 
