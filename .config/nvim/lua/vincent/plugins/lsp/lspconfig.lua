@@ -16,11 +16,11 @@ if not typescript_setup then
   return
 end
 
--- import tailwindcss-colors plugin safely
-local twc_setup, twc = pcall(require, "tailwindcss-colors")
-if not twc_setup then
-  return
-end
+-- -- import tailwindcss-colors plugin safely
+-- local twc_setup, twc = pcall(require, "tailwindcss-colors")
+-- if not twc_setup then
+--   return
+-- end
 
 local keymap = vim.keymap -- for conciseness
 
