@@ -16,12 +16,6 @@ if not typescript_setup then
   return
 end
 
--- -- import tailwindcss-colors plugin safely
--- local twc_setup, twc = pcall(require, "tailwindcss-colors")
--- if not twc_setup then
---   return
--- end
-
 local keymap = vim.keymap -- for conciseness
 
 -- enable keybinds only for when lsp server available
@@ -88,6 +82,12 @@ lspconfig["cssls"].setup({
 
 -- configure tailwindcss server
 lspconfig["tailwindcss"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure prisma server
+lspconfig["prismals"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
