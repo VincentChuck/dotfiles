@@ -1,11 +1,13 @@
 {
-  "name": "my-snippets",
+  "name": "js-ts-snippets",
   "contributes": {
     "snippets": [
       {
         "language": [
           "javascript",
-          "typescript"
+          "javascriptreact",
+          "typescript",
+          "typescriptreact"
         ],
         "path": "./js.json"
       }
