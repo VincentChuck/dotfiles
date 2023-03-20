@@ -60,24 +60,12 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
--- configure html server
-lspconfig["html"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-})
-
 -- configure typescript server with plugin
 typescript.setup({
   server = {
     capabilities = capabilities,
     on_attach = on_attach,
   },
-})
-
--- configure css server
-lspconfig["cssls"].setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
 })
 
 -- configure tailwindcss server
@@ -88,6 +76,18 @@ lspconfig["tailwindcss"].setup({
 
 -- configure prisma server
 lspconfig["prismals"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure html server
+lspconfig["html"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure css server
+lspconfig["cssls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })

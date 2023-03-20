@@ -1,0 +1,10 @@
+{
+  "arrowFunction": {
+    "prefix": "af",
+    "body": ["($1) => {", "  $2", "}"]
+  },
+  "regularFunction": {
+    "prefix": "func",
+    "body": ["function($1) {", "  $2", "}"]
+  }
+}

@@ -9,7 +9,7 @@
           "typescript",
           "typescriptreact"
         ],
-        "path": "./js.json"
+        "path": "./typescript/jsts.json"
       }
     ]
   }
