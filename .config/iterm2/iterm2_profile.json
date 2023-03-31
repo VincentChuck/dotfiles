@@ -102,6 +102,14 @@
       "Text" : "b",
       "Action" : 10
     },
+    "0x6b-0x180000-0x28" : {
+      "Version" : 1,
+      "Action" : 63,
+      "Text" : {
+        "guid" : "41C0A04D-44DC-401C-AEDE-215911644C85"
+      },
+      "Label" : ""
+    },
     "0xf70d-0x20000" : {
       "Text" : "[21;2~",
       "Action" : 10
@@ -125,6 +133,14 @@
     "0xf729-0x20000" : {
       "Text" : "[1;2H",
       "Action" : 10
+    },
+    "0x6a-0x180000-0x26" : {
+      "Version" : 1,
+      "Action" : 63,
+      "Text" : {
+        "guid" : "AFB392C6-80E4-4E61-974D-8407445CCCB0"
+      },
+      "Label" : ""
     },
     "0xf702-0x260000" : {
       "Text" : "[1;6D",
@@ -253,6 +269,14 @@
     "0x31-0x200000" : {
       "Text" : "1",
       "Action" : 12
+    },
+    "0x78-0x180000-0x7" : {
+      "Version" : 1,
+      "Action" : 63,
+      "Text" : {
+        "guid" : "A7527769-D71D-4B2D-8FCD-8756A7CBA7EB"
+      },
+      "Label" : ""
     },
     "0x33-0x200000" : {
       "Text" : "3",
@@ -401,9 +425,9 @@
     "Alpha Component" : 1,
     "Green Component" : 0.19215686619281769
   },
-  "Name" : "Default",
+  "Name" : "mac-mini",
   "Blinking Cursor" : false,
-  "Guid" : "4C4C7155-45BF-4BAD-AA92-2436CD9D2762",
+  "Guid" : "C267035D-9F62-4AC3-9503-E911754F63D1",
   "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Red Component" : 0.019607843831181526,
