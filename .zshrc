@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias dotfiles='/usr/bin/git --git-dir=/Users/vincentchuck/.dotfiles --work-tree=/Users/vincentchuck'
+alias dot='/usr/bin/git --git-dir=/Users/vincentchuck/.dotfiles --work-tree=/Users/vincentchuck'
 
 # prompt_context() {
 # }
