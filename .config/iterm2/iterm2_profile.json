@@ -1,5 +1,5 @@
 {
-  "Working Directory" : "\/Users\/vincentchuck",
+  "Working Directory" : "\/Users\/vincentchuck\/repos",
   "Prompt Before Closing 2" : false,
   "Selected Text Color" : {
     "Red Component" : 0.92549020051956177,
@@ -106,7 +106,7 @@
       "Version" : 1,
       "Action" : 63,
       "Text" : {
-        "guid" : "41C0A04D-44DC-401C-AEDE-215911644C85"
+        "guid" : "06C74661-F66F-43BE-A4FD-1D05FB10B05A"
       },
       "Label" : ""
     },
@@ -138,7 +138,7 @@
       "Version" : 1,
       "Action" : 63,
       "Text" : {
-        "guid" : "AFB392C6-80E4-4E61-974D-8407445CCCB0"
+        "guid" : "CFD9C6B6-0D66-42AD-9A37-6AA289DE0D0B"
       },
       "Label" : ""
     },
@@ -158,6 +158,12 @@
       "Text" : "[20;2~",
       "Action" : 10
     },
+    "0x70-0x180000-0x23" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x01 70",
+      "Label" : ""
+    },
     "0xf701-0x260000" : {
       "Text" : "[1;6B",
       "Action" : 10
@@ -173,6 +179,12 @@
     "0xf703-0x240000" : {
       "Text" : "[1;5C",
       "Action" : 10
+    },
+    "0x6d-0x180000-0x2e" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x01 6d",
+      "Label" : ""
     },
     "0xf700-0x260000" : {
       "Text" : "[1;6A",
@@ -329,6 +341,12 @@
     "0xf70e-0x20000" : {
       "Text" : "[23;2~",
       "Action" : 10
+    },
+    "0x6e-0x180000-0x2d" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x01 6e",
+      "Label" : ""
     },
     "0x2e-0x200000" : {
       "Text" : ".",
@@ -491,7 +509,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.65882354974746704
   },
-  "Transparency" : 0.076628989361702149,
+  "Transparency" : 0.076628989361702135,
   "HotKey Activated By Modifier" : false,
   "Background Color" : {
     "Red Component" : 0.14901961386203766,
@@ -500,7 +518,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.16470588743686676
   },
-  "Initial Text" : "",
+  "Initial Text" : "tmux attach || tmux new -s main",
   "Screen" : -1,
   "HotKey Characters Ignoring Modifiers" : "i",
   "Non Ascii Font" : "MesloLGS-NF-Regular 12",
@@ -516,7 +534,7 @@
 
   ],
   "Visual Bell" : true,
-  "Custom Directory" : "No",
+  "Custom Directory" : "Yes",
   "ASCII Ligatures" : false,
   "Ansi 5 Color" : {
     "Red Component" : 0.73725491762161255,
