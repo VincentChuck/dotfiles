@@ -110,6 +110,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias dot='/usr/bin/git --git-dir=/Users/vincentchuck/.dotfiles --work-tree=/Users/vincentchuck'
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add -A'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcm='git commit -m'
+alias gcam='git commit -am'
+alias co='git checkout'
 
 # prompt_context() {
 # }
@@ -127,3 +135,5 @@ export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="/Users/vincentchuck/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform

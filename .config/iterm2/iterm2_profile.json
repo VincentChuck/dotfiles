@@ -94,6 +94,12 @@
   "Custom Command" : "No",
   "HotKey Key Code" : 34,
   "Keyboard Map" : {
+    "0x63-0x180000-0x8" : {
+      "Version" : 1,
+      "Action" : 11,
+      "Text" : "0x01 63",
+      "Label" : ""
+    },
     "0xf728-0x80000" : {
       "Text" : "d",
       "Action" : 10
@@ -104,10 +110,14 @@
     },
     "0x6b-0x180000-0x28" : {
       "Version" : 1,
-      "Action" : 63,
-      "Text" : {
-        "guid" : "06C74661-F66F-43BE-A4FD-1D05FB10B05A"
-      },
+      "Action" : 11,
+      "Text" : "0x20 0x74 0x6e\n    guid = \"06C74661-F66F-43BE-A4FD-1D05FB10B05A\";\n}",
+      "Label" : ""
+    },
+    "0x65-0x40000-0xe" : {
+      "Version" : 0,
+      "Action" : 11,
+      "Text" : "0x5",
       "Label" : ""
     },
     "0xf70d-0x20000" : {
@@ -136,10 +146,8 @@
     },
     "0x6a-0x180000-0x26" : {
       "Version" : 1,
-      "Action" : 63,
-      "Text" : {
-        "guid" : "CFD9C6B6-0D66-42AD-9A37-6AA289DE0D0B"
-      },
+      "Action" : 11,
+      "Text" : "0x20 0x74 0x70\n    guid = \"06C74661-F66F-43BE-A4FD-1D05FB10B05A\";\n}",
       "Label" : ""
     },
     "0xf702-0x260000" : {
@@ -194,10 +202,6 @@
       "Text" : "[1;5D",
       "Action" : 10
     },
-    "0xf703-0x300000" : {
-      "Text" : "0x5",
-      "Action" : 11
-    },
     "0x37-0x40000" : {
       "Text" : "0x1f",
       "Action" : 11
@@ -210,9 +214,9 @@
       "Text" : "[1;5B",
       "Action" : 10
     },
-    "0xf702-0x300000" : {
-      "Text" : "0x1",
-      "Action" : 11
+    "0xf70b-0x20000" : {
+      "Text" : "[19;2~",
+      "Action" : 10
     },
     "0xf703-0x220000" : {
       "Text" : "[1;2C",
@@ -221,10 +225,6 @@
     "0xf739-0x0" : {
       "Text" : "",
       "Action" : 13
-    },
-    "0xf70b-0x20000" : {
-      "Text" : "[19;2~",
-      "Action" : 10
     },
     "0xf728-0x0" : {
       "Text" : "0x4",
@@ -445,7 +445,7 @@
   },
   "Name" : "mac-mini",
   "Blinking Cursor" : false,
-  "Guid" : "C267035D-9F62-4AC3-9503-E911754F63D1",
+  "Guid" : "084E9976-107F-4C1A-B596-FA03AF1DDDDF",
   "Idle Code" : 0,
   "Ansi 10 Color" : {
     "Red Component" : 0.019607843831181526,
@@ -509,7 +509,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.65882354974746704
   },
-  "Transparency" : 0.076628989361702135,
+  "Transparency" : 0.076628989361702107,
   "HotKey Activated By Modifier" : false,
   "Background Color" : {
     "Red Component" : 0.14901961386203766,
@@ -518,7 +518,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.16470588743686676
   },
-  "Initial Text" : "tmux attach || tmux new -s main",
+  "Initial Text" : "",
   "Screen" : -1,
   "HotKey Characters Ignoring Modifiers" : "i",
   "Non Ascii Font" : "MesloLGS-NF-Regular 12",
