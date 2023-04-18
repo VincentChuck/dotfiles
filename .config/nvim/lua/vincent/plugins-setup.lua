@@ -55,6 +55,21 @@ return packer.startup(function(use)
   -- statusline
   use("nvim-lualine/lualine.nvim")
 
+  use({
+    "utilyre/barbecue.nvim",
+    tag = "*",
+    requires = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons", -- optional dependency
+    },
+    after = "nvim-web-devicons", -- keep this if you're using NvChad
+    config = function()
+      require("barbecue").setup({
+        attach_navic = false, -- -- prevent barbecue from automatically attaching nvim-navic
+      })
+    end,
+  })
+
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
@@ -101,6 +116,9 @@ return packer.startup(function(use)
 
   -- git integration
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
+
+  -- codeium ai code completion
+  use("Exafunction/codeium.vim")
 
   if packer_bootstrap then
     require("packer").sync()

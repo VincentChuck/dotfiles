@@ -117,6 +117,8 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gcm='git commit -m'
 alias gcam='git commit -am'
+alias gp='git push'
+alias gl='git log'
 alias co='git checkout'
 
 # prompt_context() {
