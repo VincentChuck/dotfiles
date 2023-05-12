@@ -9,7 +9,7 @@ local attach_opts = { silent = true }
 ---------------------
 
 -- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>")
+keymap.set("i", "<C-o>", "<ESC>ldei")
 
 -- clear search highlights
 keymap.set("n", "<leader>nh", ":nohl<CR>")
@@ -62,18 +62,24 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
 --- luasnip keymappings
-keymap.set({ "i", "s" }, "<c-x>", function()
-  require("luasnip").expand_or_jump()
-end, attach_opts)
-keymap.set({ "i", "s" }, "<c-j>", function()
-  require("luasnip").change_choice(1)
-end, attach_opts)
-keymap.set({ "i", "s" }, "<c-k>", function()
-  require("luasnip").change_choice(-1)
-end, attach_opts)
-keymap.set({ "i", "s" }, "<c-l>", function()
-  require("luasnip").jump(1)
-end, attach_opts)
-keymap.set({ "i", "s" }, "<c-h>", function()
-  require("luasnip").jump(-1)
-end, attach_opts)
+-- keymap.set({ "i", "s" }, "<c-x>", function()
+--   require("luasnip").expand_or_jump()
+-- end, attach_opts)
+-- keymap.set({ "i", "s" }, "<c-j>", function()
+--   require("luasnip").change_choice(1)
+-- end, attach_opts)
+-- keymap.set({ "i", "s" }, "<c-k>", function()
+--   require("luasnip").change_choice(-1)
+-- end, attach_opts)
+-- keymap.set({ "i", "s" }, "<c-l>", function()
+--   require("luasnip").jump(1)
+-- end, attach_opts)
+-- keymap.set({ "i", "s" }, "<c-h>", function()
+--   require("luasnip").jump(-1)
+-- end, attach_opts)
+
+-- codeium remap
+vim.g.codeium_no_map_tab = 1
+keymap.set("i", "<M-Tab>", function()
+  return vim.fn["codeium#Accept"]()
+end, { expr = true })

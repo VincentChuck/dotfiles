@@ -120,6 +120,7 @@ alias gcam='git commit -am'
 alias gp='git push'
 alias gl='git log'
 alias co='git checkout'
+alias ls='ls -AF'
 
 # prompt_context() {
 # }

@@ -120,6 +120,9 @@ return packer.startup(function(use)
   -- codeium ai code completion
   use("Exafunction/codeium.vim")
 
+  -- session manager to work with tmux resurrect
+  use("tpope/vim-obsession")
+
   if packer_bootstrap then
     require("packer").sync()
   end
