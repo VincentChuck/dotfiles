@@ -83,3 +83,7 @@ vim.g.codeium_no_map_tab = 1
 keymap.set("i", "<M-Tab>", function()
   return vim.fn["codeium#Accept"]()
 end, { expr = true })
+
+-- vim obsession
+keymap.set("n", "<leader>o", ":Obsession<CR>") -- track vim session
+keymap.set("n", "<leader>os", ":Obsession!<CR>") -- stop tracking vim session
