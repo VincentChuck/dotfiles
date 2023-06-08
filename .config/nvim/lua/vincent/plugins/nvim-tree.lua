@@ -13,28 +13,24 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 -- configure nvim-tree
 nvimtree.setup({
-  -- change folder arrow icons
-  renderer = {
-    icons = {
-      glyphs = {
-        folder = {
-          arrow_closed = "", -- arrow when folder is closed
-          arrow_open = "", -- arrow when folder is open
-        },
-      },
+  view = {
+    number = true,
+    relativenumber = true,
+  },
+  modified = {
+    enable = true,
+    show_on_dirs = true,
+    show_on_open_dirs = true,
+  },
+  tab = {
+    sync = {
+      open = true,
+      close = true,
     },
   },
-  -- disable window_picker for
-  -- explorer to work well with
-  -- window splits
-  actions = {
-    open_file = {
-      window_picker = {
-        enable = false,
-      },
-    },
+  hijack_unnamed_buffer_when_opening = true,
+  hijack_directories = {
+    enable = true,
+    auto_open = true,
   },
-  -- 	git = {
-  -- 		ignore = false,
-  -- 	},
 })

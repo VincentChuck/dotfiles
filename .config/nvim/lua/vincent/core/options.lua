@@ -41,3 +41,12 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
 opt.iskeyword:append("-") -- consider string-string as whole word
+
+vim.g.codeium_no_map_tab = 1
+vim.g.codeium_filetypes = {
+  sh = false,
+  conf = false,
+  config = false,
+  sshconfig = false,
+  typescript = true,
+}

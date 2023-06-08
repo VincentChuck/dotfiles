@@ -55,21 +55,6 @@ return packer.startup(function(use)
   -- statusline
   use("nvim-lualine/lualine.nvim")
 
-  use({
-    "utilyre/barbecue.nvim",
-    tag = "*",
-    requires = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons", -- optional dependency
-    },
-    after = "nvim-web-devicons", -- keep this if you're using NvChad
-    config = function()
-      require("barbecue").setup({
-        attach_navic = false, -- -- prevent barbecue from automatically attaching nvim-navic
-      })
-    end,
-  })
-
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
   use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
@@ -118,7 +103,24 @@ return packer.startup(function(use)
   use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
 
   -- codeium ai code completion
-  use("Exafunction/codeium.vim")
+  use({
+    "Exafunction/codeium.vim",
+    config = function()
+      -- Change '<C-g>' here to any keycode you like.
+      vim.keymap.set("i", "<c-e>", function()
+        return vim.fn["codeium#Accept"]()
+      end, { expr = true })
+      vim.keymap.set("i", "<c-;>", function()
+        return vim.fn["codeium#CycleCompletions"](1)
+      end, { expr = true })
+      vim.keymap.set("i", "<c-,>", function()
+        return vim.fn["codeium#CycleCompletions"](-1)
+      end, { expr = true })
+      vim.keymap.set("i", "<c-x>", function()
+        return vim.fn["codeium#Clear"]()
+      end, { expr = true })
+    end,
+  })
 
   -- session manager to work with tmux resurrect
   use("tpope/vim-obsession")
