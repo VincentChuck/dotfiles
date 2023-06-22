@@ -2,7 +2,6 @@
 vim.g.mapleader = " "
 
 local keymap = vim.keymap -- for conciseness
-local attach_opts = { silent = true }
 
 ---------------------
 -- General Keymaps
@@ -64,3 +63,10 @@ keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if ne
 -- vim obsession
 keymap.set("n", "<leader>o", ":Obsession<CR>") -- track vim session
 keymap.set("n", "<leader>os", ":Obsession!<CR>") -- stop tracking vim session
+
+-- codeium
+keymap.set("n", "<leader>cd", ":Codeium Disable<CR>")
+keymap.set("n", "<leader>ce", ":Codeium Enable<CR>")
+
+-- nvim-treesitter-context
+keymap.set("n", "<leader>cc", ":TSContextToggle<CR>")
