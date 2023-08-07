@@ -122,6 +122,7 @@ alias gl='git log'
 alias co='git checkout'
 alias ls='ls -AF'
 alias sshs='grep sshd /var/log/system.log'
+alias nv='nvim'
 
 # prompt_context() {
 # }

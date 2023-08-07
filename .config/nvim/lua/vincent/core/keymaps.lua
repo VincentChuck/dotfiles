@@ -65,8 +65,8 @@ keymap.set("n", "<leader>o", ":Obsession<CR>") -- track vim session
 keymap.set("n", "<leader>os", ":Obsession!<CR>") -- stop tracking vim session
 
 -- codeium
-keymap.set("n", "<leader>cd", ":Codeium Disable<CR>")
-keymap.set("n", "<leader>ce", ":Codeium Enable<CR>")
+keymap.set("n", "<leader>td", ":Codeium Disable<CR>")
+keymap.set("n", "<leader>te", ":Codeium Enable<CR>")
 
 -- nvim-treesitter-context
-keymap.set("n", "<leader>cc", ":TSContextToggle<CR>")
+keymap.set("n", "<leader>tc", ":TSContextToggle<CR>")
