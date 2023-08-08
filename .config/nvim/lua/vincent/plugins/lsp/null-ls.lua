@@ -18,7 +18,7 @@ null_ls.setup({
     --  to disable file types use
     --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
     formatting.prettier.with({
-      extra_filetypes = { "prisma" },
+      extra_filetypes = { "prisma", "astro" },
       -- condition = function(utils)
       --   return utils.root_has_file_matches("^prettier")
       -- end,
