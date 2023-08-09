@@ -121,3 +121,9 @@ lspconfig["lua_ls"].setup({
     },
   },
 })
+
+-- configure astro server
+lspconfig["astro"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
