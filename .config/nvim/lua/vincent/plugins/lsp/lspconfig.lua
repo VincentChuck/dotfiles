@@ -24,7 +24,7 @@ local on_attach = function(client, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
   -- set keybinds
-  keymap.set("n", "gf", "<cmd>Lspsaga finder def+ref<CR>", opts) -- show definition, references
+  keymap.set("n", "gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
   keymap.set("n", "gD", "<Cmd>Lspsaga goto_definition<CR>", opts) -- got to declaration
   keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
   keymap.set("n", "gi", "<cmd>Lspsaga finder imp<CR>", opts) -- go to implementation
@@ -34,10 +34,6 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
-
-  if client.server_capabilities["documentSymbolProvider"] then
-    require("nvim-navic").attach(client, bufnr)
-  end
 
   -- typescript specific keymaps (e.g. rename file and update imports)
   if client.name == "tsserver" then

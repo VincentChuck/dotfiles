@@ -4,26 +4,19 @@ if not saga_status then
   return
 end
 
+local keyConfig = {
+  edit = "<CR>",
+  vsplit = "<C-v>",
+  tabe = "<C-t>",
+  quit = "<ESC>",
+}
+
 saga.setup({
   -- keybinds for navigation in lspsaga window
   scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
   -- use enter to open file with definition preview
-  definition = {
-    keys = {
-      edit = "<CR>",
-      vsplit = "<C-v>",
-      tabe = "<C-t>",
-      quit = "<ESC>",
-    },
-  },
-  finder = {
-    keys = {
-      edit = "<CR>",
-      vsplit = "<C-v>",
-      tabe = "<C-t>",
-      quit = "<ESC>",
-    },
-  },
+  definition = { keys = keyConfig },
+  finder = { winopt = { number = true }, keys = keyConfig },
   ui = {
     colors = {
       normal_bg = "#022746",
