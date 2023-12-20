@@ -283,7 +283,38 @@ require('lazy').setup({
 
   'christoomey/vim-tmux-navigator',
 
-  'windwp/nvim-autopairs',
+  'szw/vim-maximizer',
+
+  {
+    "windwp/nvim-autopairs",
+    event = { "InsertEnter" },
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      -- import nvim-autopairs
+      local autopairs = require("nvim-autopairs")
+
+      -- configure autopairs
+      autopairs.setup({
+        check_ts = true,                      -- enable treesitter
+        ts_config = {
+          lua = { "string" },                 -- don't add pairs in lua string treesitter nodes
+          javascript = { "template_string" }, -- don't add pairs in javscript template_string treesitter nodes
+          java = false,                       -- don't check treesitter on java
+        },
+      })
+
+      -- import nvim-autopairs completion functionality
+      local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+      -- import nvim-cmp plugin (completions plugin)
+      local cmp = require("cmp")
+
+      -- make autopairs and completion work together
+      cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+    end,
+  },
 
   {
     "windwp/nvim-ts-autotag",
@@ -297,6 +328,76 @@ require('lazy').setup({
     config = function()
       vim.cmd.colorscheme 'catppuccin-macchiato'
     end,
+  },
+
+  {
+    "nvim-tree/nvim-tree.lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      local nvimtree = require("nvim-tree")
+
+      -- recommended settings from nvim-tree documentation
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+
+      -- change color for arrows in tree to light blue
+      vim.cmd([[ highlight NvimTreeFolderArrowClosed guifg=#3FC5FF ]])
+      vim.cmd([[ highlight NvimTreeFolderArrowOpen guifg=#3FC5FF ]])
+
+      -- configure nvim-tree
+      nvimtree.setup({
+        view = {
+          width = 35,
+          relativenumber = true,
+        },
+        -- change folder arrow icons
+        renderer = {
+          indent_markers = {
+            enable = true,
+          },
+          icons = {
+            glyphs = {
+              folder = {
+                arrow_closed = "", -- arrow when folder is closed
+                arrow_open = "", -- arrow when folder is open
+              },
+            },
+          },
+        },
+        -- disable window_picker for
+        -- explorer to work well with
+        -- window splits
+        actions = {
+          open_file = {
+            window_picker = {
+              enable = false,
+            },
+          },
+        },
+        filters = {
+          custom = { ".DS_Store" },
+        },
+        git = {
+          ignore = false,
+        },
+      })
+
+      -- set keymaps
+      local keymap = vim.keymap
+
+      keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
+
+      -- keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "Toggle file explorer on current file" }) -- toggle file explorer on current file
+      -- keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" })                   -- collapse file explorer
+      -- keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" })                     -- refresh file explorer
+    end,
+  },
+
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   }
 
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
@@ -382,6 +483,7 @@ vim.keymap.set("n", "<leader>tn", ":tabn<CR>")     --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>")     --  go to previous tab
 vim.keymap.set("n", "<leader>>", ":tabm +1<CR>")   --  move tab to the right
 vim.keymap.set("n", "<leader><", ":tabm -1<CR>")   --  move tab to the left
+vim.keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -480,6 +582,7 @@ vim.defer_fn(function()
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
 
+    autotag = { enable = true },
     highlight = { enable = true },
     indent = { enable = true },
     incremental_selection = {

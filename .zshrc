@@ -120,11 +120,15 @@ alias gcam='git commit -am'
 alias gp='git push'
 alias gl='git log'
 alias gd='git diff'
-alias gdp="git diff -- . ':(exclude,top)package-lock.json'"
+alias gdp="git diff -- . ':(exclude,top)package-lock.json'  ':(exclude,top)build'"
 alias co='git checkout'
 alias ls='ls -AF'
 alias sshs='grep sshd /var/log/system.log'
 alias nv='nvim'
+alias ch="chmod u+x ~/dotvu/dot-code-component-json-generator/build/src/index.js"
+alias dea="docker exec -it feenstra-nos-api-1 sh"
+alias deb="docker exec -it feenstra-nos-backoffice-1 sh"
+alias dec="docker exec -it feenstra-nos-callcenter-1 sh"
 
 # prompt_context() {
 # }
