@@ -11,7 +11,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/15/bin
+# export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/15/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias dot='/usr/bin/git --git-dir=/Users/vincentchuck/.dotfiles --work-tree=/Users/vincentchuck'
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add -A'
@@ -124,7 +124,7 @@ alias gdp="git diff -- . ':(exclude,top)package-lock.json'  ':(exclude,top)build
 alias co='git checkout'
 alias ls='ls -AF'
 alias sshs='grep sshd /var/log/system.log'
-alias nv='nvim'
+alias nv='~/nvim.appimage'
 alias ch="chmod u+x ~/dotvu/dot-code-component-json-generator/build/src/index.js"
 alias dea="docker exec -it feenstra-nos-api-1 sh"
 alias deb="docker exec -it feenstra-nos-backoffice-1 sh"
@@ -143,11 +143,10 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # pnpm
-export PNPM_HOME="/Users/vincentchuck/Library/pnpm"
+export PNPM_HOME="/$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
