@@ -124,11 +124,13 @@ alias gdp="git diff -- . ':(exclude,top)package-lock.json'  ':(exclude,top)build
 alias co='git checkout'
 alias ls='ls -AF'
 alias sshs='grep sshd /var/log/system.log'
-alias nv='~/nvim.appimage'
+alias nv='/opt/nvim-linux64/bin/nvim'
 alias ch="chmod u+x ~/dotvu/dot-code-component-json-generator/build/src/index.js"
 alias dea="docker exec -it feenstra-nos-api-1 sh"
 alias deb="docker exec -it feenstra-nos-backoffice-1 sh"
 alias dec="docker exec -it feenstra-nos-callcenter-1 sh"
+alias ded="docker exec -it docker-app-1 sh"
+alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
 
 # prompt_context() {
 # }
@@ -142,10 +144,9 @@ export NVM_DIR="$HOME/.nvm"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# pnpm
 export PNPM_HOME="/$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+export PATH="$PATH:/opt/nvim-linux64/bin"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
