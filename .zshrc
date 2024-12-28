@@ -125,12 +125,7 @@ alias co='git checkout'
 alias ls='ls -AF'
 alias sshs='grep sshd /var/log/system.log'
 alias nv='/opt/nvim-linux64/bin/nvim'
-alias ch="chmod u+x ~/dotvu/dot-code-component-json-generator/build/src/index.js"
-alias dea="docker exec -it feenstra-nos-api-1 sh"
-alias deb="docker exec -it feenstra-nos-backoffice-1 sh"
-alias dec="docker exec -it feenstra-nos-callcenter-1 sh"
-alias ded="docker exec -it docker-app-1 sh"
-alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland"
+alias code="code --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform=wayland --StartupWMClass=Code"
 
 # prompt_context() {
 # }
@@ -151,3 +146,10 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# bun completions
+[ -s "/home/vincent/.bun/_bun" ] && source "/home/vincent/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
